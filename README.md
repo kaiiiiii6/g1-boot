@@ -10,11 +10,11 @@
 
 ## 启动步骤
 
-1.用 IDEA 打开本目录，等待 Maven 依赖下载完成。
-2.运行`src/main/java/com/example/demo/DemoApplication.java`，
+1. 用 IDEA 打开本目录，等待 Maven 依赖下载完成。
+2. 运行`src/main/java/com/example/demo/DemoApplication.java`，
 或在本目录执行：`mvn spring-boot:run`
-3.控制台出现`Started DemoApplication in ... seconds` 表示启动成功。
-4.浏览器访问 `http://localhost:8080/hello` 应返回一段问候语。
+3. 控制台出现`Started DemoApplication in ... seconds` 表示启动成功。
+4. 浏览器访问 `http://localhost:8080/hello` 应返回一段问候语。
 
 ## 已实现接口
 
