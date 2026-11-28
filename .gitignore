@@ -33,3 +33,6 @@ build/
 .vscode/
 
 *.class
+
+### 本地机密配置（存数据库口令，绝不提交）###
+application-local.properties
