@@ -14,14 +14,17 @@ public class HelloController {
     private final HelloService service;
     private final OrderService orderService;
     private final Greeting greeting;
+    private final HelloLogMapper helloLogMapper;
+
 
    @Autowired
     public HelloController(HelloService service,
                            OrderService orderService,
-                           @Qualifier("EnGreeting")Greeting greeting) {
+                           @Qualifier("EnGreeting")Greeting greeting,HelloLogMapper helloLogMapper) {
         this.service = service;
         this.orderService = orderService;
         this.greeting = greeting;
+        this.helloLogMapper = helloLogMapper;
     }
 
     @GetMapping("/hello")
@@ -47,6 +50,11 @@ public class HelloController {
     @GetMapping("/boom")
     public Result<String> boom(){
        throw new RuntimeException("试一下");
+    }
+
+    @GetMapping("/hello/db/{id}")
+    public Result<String> hellodb(@PathVariable("id") Long  id){
+       return Result.ok(helloLogMapper.findmessageById(id));
     }
 
     @PostMapping ("/echo")
